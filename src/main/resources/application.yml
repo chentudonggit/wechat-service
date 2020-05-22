@@ -1,0 +1,113 @@
+server:
+  port: 4590
+
+spring:
+  application:
+    name: wechat
+
+  profiles:
+    active: development
+
+---
+spring:
+  profiles: development
+
+tencent:
+  wx:
+    app_id: wx62c3f08656ff80da
+    app_secret: aeb9c342d929942e5cda473da1f5ca95
+    aes_key: 73d9IlYnC06w7H3xjtHnKAC19I31q1IJQO9ANLz6EBC
+    token: ctd123456
+    redirect_url: http://hm-keji.com/wechat/callback?code=
+    config-storage:
+      type: memory
+
+    menu:
+      enabled: false
+      buttons:
+        - {type: 'view' , name: '进入官网 ', url: 'http://hm-keji.com/index.html'}
+        - {name: '培训项目 ',
+           sub-buttons:[
+           {type: 'view', name: '技术培训', url: 'http://hm-keji.com/index.html'},
+           {type: 'view', name: '热门培训', url: 'http://hm-keji.com/index.html'},
+           {type: 'view', name: '需求定制', url: 'http://hm-keji.com/index.html'}
+           ]
+        }
+        - {name: '关于ctdys',
+           sub-buttons:[
+           {type: 'view', name: '关于我们', url: 'http://hm-keji.com/index.html'},
+           {type: 'view', name: '商业合作', url: 'http://hm-keji.com/index.html'},
+           {type: 'view', name: '个人中心', url: 'http://hm-keji.com/index.html'},
+           {type: 'view', name: '在线咨询', url: 'http://hm-keji.com/index.html'},
+           {type: 'view', name: '加入ctdys', url: 'http://hm-keji.com/index.html'}
+           ]
+        }
+
+---
+spring:
+  profiles: testing
+
+tencent:
+  wx:
+    app_id: wxe59154e1ff562981
+    app_secret: 4cf885070dfac8027342c8f4781fd59d
+    aes_key: 73d9IlYnC06w7H3xjtHnKAC19I31q1IJQO9ANLz6EBC
+    redirect_url: http://hm-keji.com/wechat/callback?code=
+    token: ctd123456
+    config-storage:
+      type: memory
+
+    menu:
+      enabled: false
+      buttons:
+        - {type: 'view' , name: '进入官网 ', url: ''}
+        - {name: '培训项目 ',
+           sub-buttons:[
+           {type: 'view', name: '技术培训', url: ''},
+           {type: 'view', name: '热门培训', url: ''},
+           {type: 'view', name: '需求定制', url: ''}
+           ]
+        }
+        - {name: '关于ctdys',
+           sub-buttons:[
+           {type: 'view', name: '关于我们', url: ''},
+           {type: 'view', name: '商业合作', url: ''},
+           {type: 'view', name: '个人中心', url: ''},
+           {type: 'view', name: '在线咨询', url: ''},
+           {type: 'view', name: '加入ctdys', url: ''}
+           ]
+        }
+---
+spring:
+  profiles: production
+
+tencent:
+  wx:
+    app_id: wxe59154e1ff562981
+    app_secret: 4cf885070dfac8027342c8f4781fd59d
+    aes_key: 73d9IlYnC06w7H3xjtHnKAC19I31q1IJQO9ANLz6EBC
+    redirect_url: http://hm-keji.com/wechat/callback?code=
+    token: 12341bd2743fd8083ff549d68e24fabc
+    config-storage:
+      type: memory
+
+    menu:
+      enabled: false
+      buttons:
+        - {type: 'view' , name: '进入官网 ', url: ''}
+        - {name: '培训项目 ',
+           sub-buttons:[
+           {type: 'view', name: '技术培训', url: ''},
+           {type: 'view', name: '热门培训', url: ''},
+           {type: 'view', name: '需求定制', url: ''}
+           ]
+        }
+        - {name: '关于ctdys',
+           sub-buttons:[
+           {type: 'view', name: '关于我们', url: ''},
+           {type: 'view', name: '商业合作', url: ''},
+           {type: 'view', name: '个人中心', url: ''},
+           {type: 'view', name: '在线咨询', url: ''},
+           {type: 'view', name: '加入ctdys', url: ''}
+           ]
+        }
